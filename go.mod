@@ -1,4 +1,4 @@
-module github.com/riking/AutoDelete
+module github.com/spike01/AutoDelete
 
 go 1.13
 

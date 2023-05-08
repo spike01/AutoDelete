@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 
 	"github.com/bwmarrin/discordgo"
-	autodelete "github.com/riking/AutoDelete"
+	autodelete "github.com/spike01/AutoDelete"
 	"gopkg.in/yaml.v2"
 )
 
