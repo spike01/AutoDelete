@@ -34,9 +34,10 @@ func main() {
 		Listen: "localhost:2202",
 		Public: "https://home.riking.org",
 	}
-	conf.BacklogLimit = 1000
+	conf.BacklogLengthLimit = 1000
 	conf.ErrorLogCh = ""
-	conf.StatusMessage = *"in the garbage"
+	s := "in the garbage"
+	conf.StatusMessage = &s
 
 	flag.Parse()
 
@@ -54,7 +55,7 @@ func main() {
 
 	b := autodelete.New(conf)
 
-	err = b.ConnectDiscord(*flagShardID, conf.Shards)
+	err := b.ConnectDiscord(*flagShardID, conf.Shards)
 	if err != nil {
 		fmt.Println("connect error:", err)
 		return

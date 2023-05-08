@@ -51,29 +51,29 @@ func New(c Config) *Bot {
 }
 
 type Config struct {
-	ClientID     string `yaml:"clientid"`
-	ClientSecret string `yaml:"clientsecret"`
-	BotToken     string `yaml:"bottoken"`
+	ClientID     string
+	ClientSecret string
+	BotToken     string
 	// discord user ID
-	AdminUser string `yaml:"adminuser"`
+	AdminUser string
 	// 0: do not use sharding
-	Shards int `yaml:"shards"`
+	Shards int
 	// discord channel ID
-	ErrorLogCh string `yaml:"errorlog"`
+	ErrorLogCh string
 	HTTP       struct {
-		Listen string `yaml:"listen"`
-		Public string `yaml:"public"`
-	} `yaml:"http"`
+		Listen string
+		Public string
+	}
 
-	StatusMessage *string `yaml:"statusmessage"`
+	StatusMessage *string
 
 	// discord guild ID
-	DonorGuild string `yaml:"donor_guild"`
+	DonorGuild string
 	// discord role IDs
-	DonorRoleIDs []string `yaml:"donor_roles"`
+	DonorRoleIDs []string
 
-	BacklogLengthLimit int `yaml:"backlog_limit"`
-	DonorBacklogLimit  int `yaml:"backlog_limit_donor"`
+	BacklogLengthLimit int
+	DonorBacklogLimit  int
 }
 
 type BansFile struct {
