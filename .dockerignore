@@ -1,0 +1,6 @@
+# flyctl launch added from .gitignore
+**/config.ini
+
+# flyctl launch added from vendor/github.com/bwmarrin/discordgo/.gitignore
+# IDE-specific metadata
+vendor/github.com/bwmarrin/discordgo/**/.idea
