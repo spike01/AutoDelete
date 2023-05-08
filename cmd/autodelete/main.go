@@ -27,13 +27,6 @@ func main() {
 	conf.ClientSecret = os.Getenv("CLIENT_SECRET")
 	conf.BotToken = os.Getenv("BOT_TOKEN")
 	conf.AdminUser = os.Getenv("ADMIN_USER")
-	conf.HTTP = struct {
-		Listen string
-		Public string
-	}{
-		Listen: "localhost:2202",
-		Public: "https://home.riking.org",
-	}
 	conf.BacklogLengthLimit = 1000
 	conf.ErrorLogCh = ""
 	s := "in the garbage"
