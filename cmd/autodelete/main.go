@@ -3,16 +3,15 @@ package main
 import (
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"net/http/pprof"
+	"os"
 	rdebug "runtime/debug"
 	"time"
 
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	autodelete "github.com/spike01/AutoDelete"
-	"gopkg.in/yaml.v2"
 )
 
 var flagShardID = flag.Int("shard", -1, "shard ID of this bot")
@@ -23,18 +22,21 @@ var flagMetricsListen = flag.String("metricslisten", "127.0.0.4", "addr to liste
 func main() {
 	var conf autodelete.Config
 
+	// Hardcoded because whatever, I make the rules here
+	conf.ClientId = os.Getenv("CLIENT_ID")
+	conf.ClientSecret = os.Getenv("CLIENT_SECRET")
+	conf.BotToken = os.Getenv("BOT_TOKEN")
+	conf.AdminUser = os.Getenv("ADMIN_USER")
+	conf.Http = HTTP{
+		Listen: "localhost:2202",
+		Public: "https://home.riking.org",
+	}
+	conf.Backlog_limit = 1000
+	conf.ErrorLogCh = ""
+	conf.StatusMessage = "in the garbage"
+
 	flag.Parse()
 
-	confBytes, err := ioutil.ReadFile("config.yml")
-	if err != nil {
-		fmt.Println("Please copy config.yml.example to config.yml and fill out the values")
-		return
-	}
-	err = yaml.Unmarshal(confBytes, &conf)
-	if err != nil {
-		fmt.Println("yaml error:", err)
-		return
-	}
 	if conf.BotToken == "" {
 		fmt.Println("bot token must be specified")
 	}
