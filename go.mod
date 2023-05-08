@@ -3,13 +3,13 @@ module github.com/spike01/AutoDelete
 go 1.13
 
 require (
-	github.com/spike01/discordgo v0.23.0
 	github.com/dgryski/go-sip13 v0.0.0-20200911182023-62edffca9245
 	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.12.1
 	github.com/prometheus/client_model v0.2.0
 	github.com/prometheus/common v0.33.0
+	github.com/spike01/discordgo v0.0.0-20230508020611-8c5072a7e98b
 	golang.org/x/crypto v0.0.0-20220411220226-7b82a4e95df4 // indirect
 	golang.org/x/net v0.0.0-20220412020605-290c469a71a5 // indirect
 	golang.org/x/oauth2 v0.0.0-20220411215720-9780585627b5
