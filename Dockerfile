@@ -9,4 +9,6 @@ ENV HOME=/
 
 EXPOSE 2202
 
-ENTRYPOINT ./bin/autodelete
+RUN mkdir ./data && touch ./data/
+
+ENTRYPOINT ./bin/autodelete -nohttp=true
