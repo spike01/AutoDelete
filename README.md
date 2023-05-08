@@ -16,7 +16,7 @@ Modifications made:
 Any new stuff needs tagging:
 ```
 git tag vx.x.x
-git push git push origin vx.x.x
+git push origin vx.x.x
 ```
 And the appropriate tag referenced in `Dockerfile`
 
