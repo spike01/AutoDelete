@@ -7,7 +7,7 @@ import (
 
 	"strings"
 
-	"github.com/bwmarrin/discordgo"
+	"github.com/spike01/discordgo"
 	"golang.org/x/oauth2"
 )
 

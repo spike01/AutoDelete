@@ -3,7 +3,7 @@ module github.com/spike01/AutoDelete
 go 1.13
 
 require (
-	github.com/bwmarrin/discordgo v0.24.0
+	github.com/spike01/discordgo v0.23.0
 	github.com/dgryski/go-sip13 v0.0.0-20200911182023-62edffca9245
 	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/pkg/errors v0.9.1
@@ -18,5 +18,3 @@ require (
 	google.golang.org/protobuf v1.28.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0
 )
-
-replace github.com/bwmarrin/discordgo => ./vendor/github.com/bwmarrin/discordgo

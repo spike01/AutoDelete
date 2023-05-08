@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/bwmarrin/discordgo"
+	"github.com/spike01/discordgo"
 	autodelete "github.com/spike01/AutoDelete"
 	"gopkg.in/yaml.v2"
 )

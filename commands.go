@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/bwmarrin/discordgo"
+	"github.com/spike01/discordgo"
 )
 
 const textHelp = `Commands:

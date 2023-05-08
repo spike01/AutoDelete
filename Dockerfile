@@ -3,7 +3,7 @@ FROM golang:latest
 RUN apt update -y --allow-insecure-repositories && apt upgrade -y && \ 
   apt install -y git && \
   apt -y clean && \
-  go get -u -v github.com/spike01/AutoDelete/cmd/autodelete
+  go install -v github.com/spike01/AutoDelete/cmd/autodelete@latest
 
 RUN mkdir -p /autodelete/data && \
   cp "/go/src/github.com/spike01/AutoDelete/docs/build.sh" /autodelete/

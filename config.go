@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/bwmarrin/discordgo"
+	"github.com/spike01/discordgo"
 	"github.com/prometheus/client_golang/prometheus"
 )
 
