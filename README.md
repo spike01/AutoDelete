@@ -1,3 +1,33 @@
+# Spike's notes on this fork
+
+I've forked this so that I know exactly what code is being built and deployed.
+
+Modifications made:
+* forked [bwmarrin/discordgo](https://github.com/bwmarrin/discordgo) to get
+  around `go install` not liking `replace` - the version in `vendor` is
+  a modified v23.0 and reflected in my fork
+* hardcoding most of `config.yml` and reading sensitive config from env - this
+  is currently deployed on fly.io, if I need to change anything I can do it
+  with `flyctl secrets set`
+* turned off OAuth http routes (since this is only installed on a single
+  server) with `nohttp=true`
+* some other stuff, check the commits
+
+Any new stuff needs tagging:
+```
+git tag vx.x.x
+git push git push origin vx.x.x
+```
+And the appropriate tag referenced in `Dockerfile`
+
+I'm not sure what happens if the fly.io instance restarts or is moved - channel
+deletion is stored in `/data` and might not persist.
+
+Some useful(...ish) docs:
+* [OCI deploy
+  guide](https://docs.google.com/document/d/12AV6N8cjPiSQD-KJjXTNdEKuvaFIdwG0F6fxevn5Q5Q/edit)
+* [Other guide](https://docs.google.com/document/d/1XnDCF7PLJkycHWBaPgbdwXTyycrmUdOo/edit)
+
 # Hiatus, Unsupported Versions, Rate Limiting & Self Hosting
 
 The creator of this bot is on an extended break, with no ETA to return to this project.
