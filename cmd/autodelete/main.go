@@ -23,17 +23,20 @@ func main() {
 	var conf autodelete.Config
 
 	// Hardcoded because whatever, I make the rules here
-	conf.ClientId = os.Getenv("CLIENT_ID")
+	conf.ClientID = os.Getenv("CLIENT_ID")
 	conf.ClientSecret = os.Getenv("CLIENT_SECRET")
 	conf.BotToken = os.Getenv("BOT_TOKEN")
 	conf.AdminUser = os.Getenv("ADMIN_USER")
-	conf.Http = HTTP{
+	conf.HTTP = struct {
+		Listen string
+		Public string
+	}{
 		Listen: "localhost:2202",
 		Public: "https://home.riking.org",
 	}
-	conf.Backlog_limit = 1000
+	conf.BacklogLimit = 1000
 	conf.ErrorLogCh = ""
-	conf.StatusMessage = "in the garbage"
+	conf.StatusMessage = *"in the garbage"
 
 	flag.Parse()
 
